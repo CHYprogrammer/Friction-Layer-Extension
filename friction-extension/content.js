@@ -4,6 +4,7 @@ if (window === window.top) {
 
   if (hostname.includes("youtube.com")) {
 
+    // overlay
     const overlay = document.createElement("div");
 
     overlay.style.position = "fixed";
@@ -13,32 +14,69 @@ if (window === window.top) {
     overlay.style.height = "100vh";
 
     overlay.style.background = "black";
-    overlay.style.color = "white";
-
-    overlay.style.fontFamily = "monospace";
-    overlay.style.fontSize = "24px";
 
     overlay.style.display = "flex";
+    overlay.style.flexDirection = "column";
+
     overlay.style.justifyContent = "center";
     overlay.style.alignItems = "center";
 
-    overlay.style.zIndex = "999999";
+    overlay.style.zIndex = "2147483647";
+
+    // progress bar
+    const progress = document.createElement("div");
+
+    progress.style.width = "400px";
+    progress.style.height = "20px";
+
+    progress.style.border = "1px solid white";
+
+    // inner bar
+    const fill = document.createElement("div");
+
+    fill.style.width = "100%";
+    fill.style.height = "100%";
+
+    fill.style.background = "lime";
+
+    progress.appendChild(fill);
+
+    // message
+    const message = document.createElement("div");
+
+    message.textContent = "勉強してないお前の顔 ↑";
+
+    message.style.color = "white";
+    message.style.marginTop = "40px";
+
+    message.style.fontSize = "24px";
+    message.style.fontFamily = "monospace";
+
+    overlay.appendChild(progress);
+    overlay.appendChild(message);
 
     document.documentElement.appendChild(overlay);
 
-    let count = 21;
+    // timer
+    const totalSeconds = 20;
 
-    overlay.textContent = count;
+    let elapsed = 0;
 
     const timer = setInterval(() => {
 
-      count--;
+      elapsed++;
 
-      overlay.textContent = count;
+      const percent =
+        100 - (elapsed / totalSeconds * 100);
 
-      if (count <= 0) {
+      fill.style.width = percent + "%";
+
+      if (elapsed >= totalSeconds) {
+
         clearInterval(timer);
+
         overlay.remove();
+
       }
 
     }, 1000);
