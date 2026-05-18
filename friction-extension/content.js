@@ -56,7 +56,7 @@ if (window === window.top) {
     document.documentElement.appendChild(overlay);
 
     // timer
-    const totalSeconds = 20;
+    const totalSeconds = 60;
 
     let elapsed = 0;
 
