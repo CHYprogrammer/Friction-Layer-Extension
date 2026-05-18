@@ -13,7 +13,7 @@ if (window === window.top) {
     overlay.style.height = "100vh";
 
     overlay.style.background = "black";
-    overlay.style.color = "lime";
+    overlay.style.color = "white";
 
     overlay.style.fontFamily = "monospace";
     overlay.style.fontSize = "80px";
