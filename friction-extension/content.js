@@ -44,8 +44,6 @@ if (window === window.top) {
     // message
     const message = document.createElement("div");
 
-    message.textContent = "勉強してないお前の顔 ↑";
-
     message.style.color = "white";
     message.style.marginTop = "40px";
 
