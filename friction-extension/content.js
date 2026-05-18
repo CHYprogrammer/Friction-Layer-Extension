@@ -13,10 +13,10 @@ if (window === window.top) {
     overlay.style.height = "100vh";
 
     overlay.style.background = "black";
-    overlay.style.color = "lime";
+    overlay.style.color = "white";
 
     overlay.style.fontFamily = "monospace";
-    overlay.style.fontSize = "80px";
+    overlay.style.fontSize = "24px";
 
     overlay.style.display = "flex";
     overlay.style.justifyContent = "center";
@@ -26,7 +26,7 @@ if (window === window.top) {
 
     document.documentElement.appendChild(overlay);
 
-    let count = 20;
+    let count = 21;
 
     overlay.textContent = count;
 
